@@ -1,4 +1,4 @@
-package org.njstat.core.protect;
+package org.njstat.core.listeners;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

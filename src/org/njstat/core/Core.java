@@ -13,9 +13,9 @@ import org.njstat.core.commands.SetRank;
 import org.njstat.core.commands.SetSpawn;
 import org.njstat.core.commands.Spawn;
 import org.njstat.core.commands.msg;
-import org.njstat.core.protect.Antidamage;
-import org.njstat.core.protect.Antirain;
-import org.njstat.core.protect.Playerjoin;
+import org.njstat.core.listeners.Antidamage;
+import org.njstat.core.listeners.Antirain;
+import org.njstat.core.listeners.Playerjoin;
 import org.njstat.core.util.FileManager;
 
 public class Core extends JavaPlugin{
