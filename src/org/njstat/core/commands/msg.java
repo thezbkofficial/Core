@@ -7,13 +7,13 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.njstat.core.Core;
 import org.njstat.core.util.FileManager;
+import org.njstat.core.util.prefix;
 public class msg implements CommandExecutor {
 	Core plugin;
 	public msg(Core passedPlugin){
 		this.plugin = passedPlugin;
 	}
 	FileManager fileManager = FileManager.getFileManager();
-	String prefix = "§9§lCORE§7 ";
 
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args){
 		
@@ -45,7 +45,7 @@ public class msg implements CommandExecutor {
 
          
 
-            sender.sendMessage("§4That player is not currently online!");
+            sender.sendMessage(prefix.core + "That player is not currently online!");
 
          
 

@@ -9,6 +9,7 @@ import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 import org.njstat.core.Core;
 import org.njstat.core.util.FileManager;
+import org.njstat.core.util.prefix;
 
 public class SetRank implements CommandExecutor {
 	
@@ -30,7 +31,7 @@ public class SetRank implements CommandExecutor {
 				} else {
 					if (!(fileManager.getrankConfig().getBoolean("groups.owner.users." + p.getUniqueId().toString()))) {
 						sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-								"&9&lCORE &7You need rank &9&lOWNER &7to execute this command!"));
+								prefix.ranks + "You need rank &9&lOWNER &7to execute this command!"));
 
 					} else {
 

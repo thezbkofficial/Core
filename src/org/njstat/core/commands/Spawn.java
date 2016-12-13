@@ -6,6 +6,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.njstat.core.Core;
+import org.njstat.core.util.prefix;
 
 public class Spawn implements CommandExecutor{
 	Core plugin;
@@ -15,7 +16,7 @@ public class Spawn implements CommandExecutor{
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
 		Player p = (Player) sender;
 		p.teleport(p.getWorld().getSpawnLocation());
-        p.sendMessage(ChatColor.YELLOW + "§6§lCORE §7Sent to spawn");
+        p.sendMessage(ChatColor.YELLOW + prefix.spawn + "Sent to spawn");
 		return true;
 	}
 }
