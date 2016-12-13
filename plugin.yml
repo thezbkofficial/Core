@@ -1,0 +1,22 @@
+main: org.njstat.core.Core
+name: Core
+version: alpha-1
+author: zbk
+commands:
+   core:
+      description: This is a test command to make sure stuff works.
+      usage: /core
+   spawn:
+      description: Go to spawn
+      usage: /spawn
+   setspawn:
+      description: Set spawn (Admins only)
+   gamemode:
+      description: gamemode
+   Announce:
+      description: Announcements
+   Setrank:
+      description: Set a players rank
+   msg:
+      description: message a player.
+      aliases: [tell, t, r, pm]
