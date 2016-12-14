@@ -1,10 +1,11 @@
 package org.njstat.core.util;
 
-public class prefix {
+import net.md_5.bungee.api.ChatColor;
+
+public interface prefix {
 	
-	//weee
-	public static String core = "§9§lCORE §7";
-	public static String ranks = "§9§lRANKS §7"; //Used for permission messages
-	public static String spawn = "§6§lSPAWN §7";
+	String core = ChatColor.translateAlternateColorCodes('&', "&9&lCORE &7");
+	String ranks = ChatColor.translateAlternateColorCodes('&', "&9&lRANKS &7");;
+	String spawn = ChatColor.translateAlternateColorCodes('&', "&6&lSPAWN &7");;
 
 }

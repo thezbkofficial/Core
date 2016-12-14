@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.njstat.core.Core;
 import org.njstat.core.util.FileManager;
 import org.njstat.core.util.R;
+import org.njstat.core.util.message;
 import org.njstat.core.util.prefix;
 public class Gamemode implements CommandExecutor {
 	Core plugin;
@@ -20,16 +21,16 @@ public class Gamemode implements CommandExecutor {
 		Player player = (Player) sender;
 		
 		if(!R.isDev(player) || R.isOwner(player) || R.isAdmin(player) || R.isBuilder(player) || player.isOp()){
-			sender.sendMessage(prefix.ranks + "No permissions.");
+			sender.sendMessage(prefix.ranks + message.NOPERMISSION);
 		}
 		else if(args.length == 1){
 			if(args[0].equalsIgnoreCase("creative")){
-				player.sendMessage(prefix.core + "Gamemode set to creative");
+				player.sendMessage(prefix.core + message.GAMEMODE_CREATIVE);
 				player.setGameMode(GameMode.CREATIVE);
 				return true;
 			}
 			else if(args[0].equalsIgnoreCase("survival")){
-				player.sendMessage(prefix.core + "Gamemode set to survival");
+				player.sendMessage(prefix.core + message.GAMEMODE_SURVIVAL);
 				player.setGameMode(GameMode.SURVIVAL);
 				return true;
 			}

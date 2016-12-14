@@ -9,6 +9,7 @@ import org.bukkit.entity.Player;
 import org.njstat.core.Core;
 import org.njstat.core.util.FileManager;
 import org.njstat.core.util.R;
+import org.njstat.core.util.message;
 import org.njstat.core.util.prefix;
 
 public class Announcements implements CommandExecutor{
@@ -27,7 +28,7 @@ public class Announcements implements CommandExecutor{
         	Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "§m===========================================\n" +ChatColor.GOLD + "\n§lANNOUNCEMENT §f- " + msg + "\n§7Sent by §a" + sender.getName() + ChatColor.GREEN + "\n§m===========================================");
         	return true;
         } else {
-        	sender.sendMessage(prefix.core + "§7No permission");
+        	sender.sendMessage(prefix.core + message.NOPERMISSION);
         }
 		return true;
 	}

@@ -6,6 +6,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.njstat.core.Core;
+import org.njstat.core.util.message;
 import org.njstat.core.util.prefix;
 
 public class SetSpawn implements CommandExecutor{
@@ -19,10 +20,10 @@ public class SetSpawn implements CommandExecutor{
 		Player p = (Player) sender;
 		if (p.isOp()){
 	        p.getWorld().setSpawnLocation(p.getLocation().getBlockX(), p.getLocation().getBlockY(), p.getLocation().getBlockZ());
-	        p.sendMessage(ChatColor.YELLOW + prefix.spawn + "§7Set spawn in §a" + p.getWorld().getName());
+	        p.sendMessage(ChatColor.YELLOW + prefix.spawn + message.SPAWN_SET + "§a" + p.getWorld().getName());
 	      }
 	    if (!p.isOp()) {
-	        p.sendMessage(ChatColor.RED + prefix.ranks + "§7Error. You do not have permission");
+	        p.sendMessage(ChatColor.RED + prefix.ranks + message.NOPERMISSION);
 	      }
 		return true;
 		

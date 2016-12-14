@@ -2,7 +2,6 @@ package org.njstat.core;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -32,64 +31,28 @@ public class Core extends JavaPlugin{
 	@Override
 	public void onEnable(){
 		plugin = this;
-		registerEvents(this, new Antirain(), new Antidamage(), new Playerjoin(), new ChatFormat());
-		
-		this.getServer().getConsoleSender()
-		.sendMessage(ChatColor.GREEN + "§7[§aCore loader§7]" + ChatColor.AQUA + " Starting up the plugin");
-		this.getServer().getConsoleSender()
-		.sendMessage(ChatColor.GREEN + "§7[§aCore loader§7]" + ChatColor.GREEN + " ===== " + ChatColor.RED + "COMMANDS" + ChatColor.GREEN + "=====");
+		registerEvents(this, new Antirain(), new Antidamage(), new Playerjoin(), new ChatFormats());
+		registerConfig();
 		//register commands
-		this.getServer().getConsoleSender()
-		.sendMessage(ChatColor.GREEN + "§7[§aCore loader§7]" + ChatColor.AQUA + " Enabling core.");
 		this.getCommand("core").setExecutor(new CoreCommand(this));
-		this.getServer().getConsoleSender()
-		.sendMessage(ChatColor.GREEN + "§7[§aCore loader§7]" + ChatColor.AQUA + " Core enabled.");
-		this.getServer().getConsoleSender()
-		.sendMessage(ChatColor.GREEN + "§7[§aCore loader§7]" + ChatColor.AQUA + " Enabling /spawn.");
 		this.getCommand("spawn").setExecutor(new Spawn(this));
-		this.getServer().getConsoleSender()
-		.sendMessage(ChatColor.GREEN + "§7[§aCore loader§7]" + ChatColor.AQUA + " /spawn enabled");
-		this.getServer().getConsoleSender()
-		.sendMessage(ChatColor.GREEN + "§7[§aCore loader§7]" + ChatColor.AQUA + " Enabling /Setspawn.");
 		this.getCommand("SetSpawn").setExecutor(new SetSpawn(this));
-		this.getServer().getConsoleSender()
-		.sendMessage(ChatColor.GREEN + "§7[§aCore loader§7]" + ChatColor.AQUA + " /Setspawn Enabled");
-		this.getServer().getConsoleSender()
-		.sendMessage(ChatColor.GREEN + "§7[§aCore loader§7]" + ChatColor.AQUA + " Enabling /gamemode.");
-		//Gamemode works now kek.
 		this.getCommand("gamemode").setExecutor(new Gamemode(this));
-		this.getServer().getConsoleSender()
-		.sendMessage(ChatColor.GREEN + "§7[§aCore loader§7]" + ChatColor.AQUA + " /gamemode Enabled");
-		this.getServer().getConsoleSender()
-		.sendMessage(ChatColor.GREEN + "§7[§aCore loader§7]" + ChatColor.AQUA + " Enabling /announce.");
 		this.getCommand("Announce").setExecutor(new Announcements(this));
-		this.getServer().getConsoleSender()
-		.sendMessage(ChatColor.GREEN + "§7[§aCore loader§7]" + ChatColor.AQUA + " /announce Enabled");
-		this.getServer().getConsoleSender()
-		.sendMessage(ChatColor.GREEN + "§7[§aCore loader§7]" + ChatColor.AQUA + " Enabling /msg.");
 		this.getCommand("msg").setExecutor(new msg(this));
-		this.getServer().getConsoleSender()
-		.sendMessage(ChatColor.GREEN + "§7[§aCore loader§7]" + ChatColor.AQUA + " /msg Enabled");
-		this.getServer().getConsoleSender()
-		.sendMessage(ChatColor.GREEN + "§7[§aCore loader§7]" + ChatColor.AQUA + " Enabling /setrank.");
-		
-		//Setup nicks filemanager
 		this.getCommand("setrank").setExecutor(new SetRank(this));
-		this.getServer().getConsoleSender()
-		.sendMessage(ChatColor.GREEN + "§7[§aCore loader§7]" + ChatColor.AQUA + " /setrank Enabled");
 		this.fileManager.setup(this);
 		this.getServer().getConsoleSender()
 		.sendMessage(ChatColor.GREEN + "§7[§aCore loader§7]" + ChatColor.AQUA + " Finished.");
 		
-		plugin.getServer().getScheduler().scheduleSyncRepeatingTask(plugin, new Runnable() {
-		    public void run() {
-		        for (Player player: Bukkit.getOnlinePlayers()) {
-		            if (player.getLocation().getY() < 9) {
-		                player.performCommand("spawn");
-		            }
-		        }
-		    }
-		}, 10L, 10L);
+		
+		
+	}
+	private void registerConfig(){
+		this.saveDefaultConfig();
+		getConfig().options().copyDefaults(true);
+		saveConfig();
+		
 	}
 	//ondisable stuff coming soon (tm)
 	@Override

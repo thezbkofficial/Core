@@ -12,6 +12,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.njstat.core.util.message;
 
 import net.minecraft.server.v1_11_R1.IChatBaseComponent.ChatSerializer;
 import net.minecraft.server.v1_11_R1.PacketPlayOutTitle;
@@ -24,17 +25,18 @@ public class Playerjoin implements Listener{
 		//Stupid join message
 		Bukkit.broadcastMessage("§7[§a+§7] " + event.getPlayer().getDisplayName());
 		
+		
         event.setJoinMessage(null);
 		Player p = event.getPlayer();
 		
-		
+		p.teleport(p.getWorld().getSpawnLocation());
 		
 		Material material = Material.STICK;
 		final PlayerInventory inventory = event.getPlayer().getInventory();
 	  	inventory.setArmorContents(null);
 	  	inventory.clear();
         int ammount = 1;
-        String name = "§aServer Selector";
+        String name = message.SERVER_SELECTOR_NAME;
         ItemStack item = new ItemStack(material, ammount);
         ItemMeta itemMeta = item.getItemMeta();
         itemMeta.setDisplayName(name);

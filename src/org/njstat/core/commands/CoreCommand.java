@@ -6,6 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.njstat.core.Core;
 import org.njstat.core.util.R;
+import org.njstat.core.util.message;
 import org.njstat.core.util.prefix;
 
 public class CoreCommand implements CommandExecutor{
@@ -19,9 +20,9 @@ public class CoreCommand implements CommandExecutor{
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
 		Player p = (Player) sender;
-		p.sendMessage(prefix.core + "Is running version " + version);
+		p.sendMessage(prefix.core + message.CORE + message.CORE_VERISON);
 		if(!R.isDefault(p)){
-			p.sendMessage(prefix.ranks + "You are staff");
+			p.sendMessage(prefix.ranks + message.CORE_IS_STAFF);
 		}
 		return true;
 	}
