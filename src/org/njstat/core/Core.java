@@ -7,6 +7,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.njstat.core.commands.Announcements;
 import org.njstat.core.commands.CoreCommand;
+import org.njstat.core.commands.Debug;
 import org.njstat.core.commands.Gamemode;
 import org.njstat.core.commands.SetRank;
 import org.njstat.core.commands.SetSpawn;
@@ -43,7 +44,8 @@ public class Core extends JavaPlugin{
 		this.getCommand("Announce").setExecutor(new Announcements(this));
 		this.getCommand("msg").setExecutor(new msg(this));
 		this.getCommand("setrank").setExecutor(new SetRank(this));
-		
+		this.getCommand("lag").setExecutor(new Debug(this));
+
 		//FileManager
 		this.fileManager.setup(this);
 		
@@ -58,7 +60,7 @@ public class Core extends JavaPlugin{
 	@Override
 	public void onDisable(){
 		this.getServer().getConsoleSender()
-		.sendMessage(ChatColor.GREEN + "§7[§aCore un-loader§7]" + ChatColor.AQUA + "Shutting down server.");
+		.sendMessage(ChatColor.GREEN + "§7[§aCore un-loader§7]" + ChatColor.AQUA + " Shutting down server.");
 
 	}
 	

@@ -25,7 +25,13 @@ public class Announcements implements CommandExecutor{
 		}
 		Player p = (Player) sender;
         if(R.isOwner(p)|| R.isDev(p) || R.isAdmin(p)){
-        	Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "§m===========================================\n" +ChatColor.GOLD + "\n§lANNOUNCEMENT §f- " + msg + "\n§7Sent by §a" + sender.getName() + ChatColor.GREEN + "\n§m===========================================");
+        	if(args.length == 0){
+        		sender.sendMessage(prefix.core + message.INVALID);
+        	}else{
+            	Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "\n" +ChatColor.GOLD + "\n§lANNOUNCEMENT §f- " + msg + "\n§7Sent by §a" + sender.getName() + ChatColor.GREEN + "\n");
+            	Bukkit.getServer().broadcastMessage("\n");
+        	}
+        	
         	return true;
         } else {
         	sender.sendMessage(prefix.core + message.NOPERMISSION);

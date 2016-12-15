@@ -20,3 +20,5 @@ commands:
    msg:
       description: message a player.
       aliases: [tell, t, r, pm]
+   lag:
+      description: display memory.
