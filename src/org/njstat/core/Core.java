@@ -43,6 +43,7 @@ public class Core extends JavaPlugin{
 		this.getCommand("Announce").setExecutor(new Announcements(this));
 		this.getCommand("msg").setExecutor(new msg(this));
 		this.getCommand("setrank").setExecutor(new SetRank(this));
+		
 		//FileManager
 		this.fileManager.setup(this);
 		
