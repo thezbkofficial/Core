@@ -31,9 +31,11 @@ public class Core extends JavaPlugin{
 	@Override
 	public void onEnable(){
 		plugin = this;
+		//Register Listeners
 		registerEvents(this, new Antirain(), new Antidamage(), new Playerjoin(), new ChatFormats());
-		registerConfig();
+		
 		//register commands
+		
 		this.getCommand("core").setExecutor(new CoreCommand(this));
 		this.getCommand("spawn").setExecutor(new Spawn(this));
 		this.getCommand("SetSpawn").setExecutor(new SetSpawn(this));
@@ -41,19 +43,16 @@ public class Core extends JavaPlugin{
 		this.getCommand("Announce").setExecutor(new Announcements(this));
 		this.getCommand("msg").setExecutor(new msg(this));
 		this.getCommand("setrank").setExecutor(new SetRank(this));
+		//FileManager
 		this.fileManager.setup(this);
+		
 		this.getServer().getConsoleSender()
 		.sendMessage(ChatColor.GREEN + "§7[§aCore loader§7]" + ChatColor.AQUA + " Finished.");
 		
 		
 		
 	}
-	private void registerConfig(){
-		this.saveDefaultConfig();
-		getConfig().options().copyDefaults(true);
-		saveConfig();
-		
-	}
+
 	//ondisable stuff coming soon (tm)
 	@Override
 	public void onDisable(){
