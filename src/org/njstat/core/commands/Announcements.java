@@ -28,7 +28,7 @@ public class Announcements implements CommandExecutor{
         	if(args.length == 0){
         		sender.sendMessage(prefix.core + message.INVALID);
         	}else{
-            	Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "\n" +ChatColor.GOLD + "\n§lANNOUNCEMENT §f- " + msg + "\n§7Sent by §a" + sender.getName() + ChatColor.GREEN + "\n");
+            	Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "\n" +ChatColor.GOLD + "" + ChatColor.BOLD + "ANNOUNCEMENT" + ChatColor.WHITE + " - " + msg + ChatColor.GRAY + "\nSent by " + ChatColor.GREEN + sender.getName() + ChatColor.GREEN + "\n");
             	Bukkit.getServer().broadcastMessage("\n");
         	}
         	
