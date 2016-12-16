@@ -20,10 +20,11 @@ public class Debug implements CommandExecutor{
 		long mem = Runtime.getRuntime().freeMemory();
 		long cpu = Runtime.getRuntime().availableProcessors();
 		long maxmem = Runtime.getRuntime().maxMemory();
+		p.sendMessage(prefix.core + ChatColor.GREEN + "Server Status");
 		p.sendMessage(prefix.core + message.MEMORY + bytesToMeg(mem) + ChatColor.GRAY + " MB");
 		p.sendMessage(prefix.core + message.MAXMEM + bytesToMeg(maxmem) + ChatColor.GRAY + " MB");
 		p.sendMessage(prefix.core + message.CPU + cpu);
-		
+		p.sendMessage(prefix.core + message.CORE + message.CORE_VERSION);
 		
 
 		return true;

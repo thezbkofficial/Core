@@ -20,7 +20,7 @@ public class CoreCommand implements CommandExecutor{
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
 		Player p = (Player) sender;
-		p.sendMessage(prefix.core + message.CORE + message.CORE_VERISON);
+		p.sendMessage(prefix.core + message.CORE + message.CORE_VERSION);
 		if(!R.isDefault(p)){
 			p.sendMessage(prefix.ranks + message.CORE_IS_STAFF);
 		}

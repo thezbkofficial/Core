@@ -8,8 +8,6 @@ import org.njstat.core.util.ChatFormat;
 import org.njstat.core.util.FileManager;
 import org.njstat.core.util.R;
 
-import net.md_5.bungee.api.ChatColor;
-
 public class ChatFormats implements Listener{
     FileManager fileManager = FileManager.getFileManager();
 
@@ -28,7 +26,7 @@ public class ChatFormats implements Listener{
 			event.setFormat(ChatFormat.ADMIN);
 		}
 		else {
-			event.setFormat(ChatColor.YELLOW + "%s §f%s");
+			event.setFormat(ChatFormat.DEFAULT);
 		}
 		
 		
