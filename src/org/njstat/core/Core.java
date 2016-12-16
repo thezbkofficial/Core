@@ -16,6 +16,7 @@ import org.njstat.core.commands.msg;
 import org.njstat.core.listeners.Antidamage;
 import org.njstat.core.listeners.Antirain;
 import org.njstat.core.listeners.Playerjoin;
+import org.njstat.core.listeners.Voiddamage;
 import org.njstat.core.util.FileManager;
 
 public class Core extends JavaPlugin{
@@ -33,7 +34,7 @@ public class Core extends JavaPlugin{
 	public void onEnable(){
 		plugin = this;
 		//Register Listeners
-		registerEvents(this, new Antirain(), new Antidamage(), new Playerjoin(), new ChatFormats());
+		registerEvents(this, new Antirain(), new Antidamage(), new Playerjoin(), new ChatFormats(), new Voiddamage());
 		
 		//register commands
 		

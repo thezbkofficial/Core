@@ -20,7 +20,7 @@ public class Gamemode implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args){
 		Player player = (Player) sender;
 		
-		if(!R.isDev(player) || R.isOwner(player) || R.isAdmin(player) || R.isBuilder(player) || player.isOp()){
+		if(!R.isDev(player) || R.isAdmin(player) || R.isOwner(player)){
 			sender.sendMessage(prefix.ranks + message.NOPERMISSION);
 		}
 		else if(args.length == 1){
@@ -28,11 +28,22 @@ public class Gamemode implements CommandExecutor {
 				player.sendMessage(prefix.core + message.GAMEMODE_CREATIVE);
 				player.setGameMode(GameMode.CREATIVE);
 				return true;
-			}
-			else if(args[0].equalsIgnoreCase("survival")){
+			}else if(args[0].equalsIgnoreCase("survival")){
 				player.sendMessage(prefix.core + message.GAMEMODE_SURVIVAL);
 				player.setGameMode(GameMode.SURVIVAL);
 				return true;
+			}else if(args[0].equalsIgnoreCase("c")){
+				player.sendMessage(prefix.core + message.GAMEMODE_CREATIVE);
+				player.setGameMode(GameMode.CREATIVE);
+				return true;
+			}else if(args[0].equalsIgnoreCase("s")){
+				player.sendMessage(prefix.core + message.GAMEMODE_SURVIVAL);
+				player.setGameMode(GameMode.SURVIVAL);
+				return true;
+			}
+				
+			else {
+				player.sendMessage(prefix.core + message.GAMEMODE_INVALID);
 			}
 			
 		}
