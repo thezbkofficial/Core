@@ -20,7 +20,7 @@ public class SetSpawn implements CommandExecutor{
 		Player p = (Player) sender;
 		if (p.isOp()){
 	        p.getWorld().setSpawnLocation(p.getLocation().getBlockX(), p.getLocation().getBlockY(), p.getLocation().getBlockZ());
-	        p.sendMessage(ChatColor.YELLOW + prefix.spawn + message.SPAWN_SET + "§a" + p.getWorld().getName());
+	        p.sendMessage(ChatColor.YELLOW + prefix.spawn + message.SPAWN_SET + ChatColor.GREEN + p.getWorld().getName());
 	      }
 	    if (!p.isOp()) {
 	        p.sendMessage(ChatColor.RED + prefix.ranks + message.NOPERMISSION);
