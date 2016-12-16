@@ -22,3 +22,4 @@ commands:
       aliases: [tell, t, r, pm]
    lag:
       description: display memory.
+      aliases: [lagg, memory]
