@@ -37,6 +37,7 @@ public class Core extends JavaPlugin{
 		registerEvents(this, new Antirain(), new Antidamage(), new Playerjoin(), new ChatFormats(), new Voiddamage());
 		
 		//register commands
+
 		
 		this.getCommand("core").setExecutor(new CoreCommand(this));
 		this.getCommand("spawn").setExecutor(new Spawn(this));
@@ -51,7 +52,7 @@ public class Core extends JavaPlugin{
 		this.fileManager.setup(this);
 		
 		this.getServer().getConsoleSender()
-		.sendMessage(ChatColor.GREEN + "§7[§aCore loader§7]" + ChatColor.AQUA + " Finished.");
+		.sendMessage(ChatColor.GREEN + "Â§7[Â§aCore loaderÂ§7]" + ChatColor.AQUA + " Finished.");
 		
 		
 		
@@ -61,7 +62,7 @@ public class Core extends JavaPlugin{
 	@Override
 	public void onDisable(){
 		this.getServer().getConsoleSender()
-		.sendMessage(ChatColor.GREEN + "§7[§aCore un-loader§7]" + ChatColor.AQUA + " Shutting down server.");
+		.sendMessage(ChatColor.GREEN + "Â§7[Â§aCore un-loaderÂ§7]" + ChatColor.AQUA + " Shutting down server.");
 
 	}
 	
@@ -79,7 +80,8 @@ public class Core extends JavaPlugin{
 	// speech over
 	
 
-	
+	//first rule of 2017:
+	// dont talk about 2016.
 	
 	
 	
