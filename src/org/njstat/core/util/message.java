@@ -17,6 +17,7 @@ public interface message {
 	//ERRORS
 	String NOPERMISSION = ChatColor.translateAlternateColorCodes('&', "&cNo permission");
 	String NOTONLINE = ChatColor.translateAlternateColorCodes('&', "&cThat player is not online");
+	String BYPASS = ChatColor.translateAlternateColorCodes('&', "Bypassing anti-move.");
 	
 	//Setrank
 	String SETRANK_USAGE = ChatColor.translateAlternateColorCodes('&', "/setrank <player> <rank>");
@@ -24,6 +25,7 @@ public interface message {
 	//SPAWN
 	String SPAWN_SET = ChatColor.translateAlternateColorCodes('&', "Spawnpoint set in ");
     String SPAWN = ChatColor.translateAlternateColorCodes('&', "Sent to spawn");
+    String TITLE = ChatColor.translateAlternateColorCodes('&', "&eWelcome &f");
     
     //LOBBY ITEMS
     String SERVER_SELECTOR_NAME = ChatColor.translateAlternateColorCodes('&', "&aServer Selector");

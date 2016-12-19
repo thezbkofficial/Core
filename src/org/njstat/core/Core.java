@@ -60,6 +60,7 @@ public class Core extends JavaPlugin{
 	//ondisable stuff coming soon (tm)
 	@Override
 	public void onDisable(){
+		this.getServer().getConsoleSender().sendMessage(ChatColor.translateAlternateColorCodes('&', "&c&lALERT &4This plugin does NOT handle relods properly and may cause memory leaks!"));
 		this.getServer().getConsoleSender()
 		.sendMessage(ChatColor.GREEN + "§7[§aCore un-loader§7]" + ChatColor.AQUA + " Shutting down server.");
 

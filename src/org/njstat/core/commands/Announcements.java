@@ -12,6 +12,8 @@ import org.njstat.core.util.R;
 import org.njstat.core.util.message;
 import org.njstat.core.util.prefix;
 
+import com.connorlinfoot.titleapi.TitleAPI;
+
 public class Announcements implements CommandExecutor{
 	Core plugin;
 	public Announcements(Core passedPlugin){
@@ -30,6 +32,9 @@ public class Announcements implements CommandExecutor{
         	}else{
             	Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "\n" +ChatColor.GOLD + "" + ChatColor.BOLD + "ANNOUNCEMENT" + ChatColor.WHITE + " - " + msg + ChatColor.GRAY + "\nSent by " + ChatColor.GREEN + sender.getName() + ChatColor.GREEN + "\n");
             	Bukkit.getServer().broadcastMessage("\n");
+            	
+            	TitleAPI.sendTitle(p,20,100,20,"Title","Subtitle");
+
         	}
         	
         	return true;

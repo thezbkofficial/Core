@@ -41,7 +41,7 @@ public class Gamemode implements CommandExecutor {
 				player.setGameMode(GameMode.SURVIVAL);
 				return true;
 			}
-				
+			
 			else {
 				player.sendMessage(prefix.core + message.GAMEMODE_INVALID);
 			}

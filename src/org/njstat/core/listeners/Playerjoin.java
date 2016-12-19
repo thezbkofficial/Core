@@ -25,7 +25,7 @@ public class Playerjoin implements Listener{
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event) {
 		//Stupid join message
-		Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', "&9Join>") + event.getPlayer().getDisplayName());
+		Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', "&8Join> &7") + event.getPlayer().getDisplayName());
 		
 		
         event.setJoinMessage(null);
@@ -48,8 +48,8 @@ public class Playerjoin implements Listener{
         item.setItemMeta(itemMeta);
         p.getInventory().addItem(item);
         
-        PacketPlayOutTitle packet = new PacketPlayOutTitle(EnumTitleAction.TITLE, ChatSerializer.a("{\"text\":\"�eWelcome " + p.getName() + "\"}"), 20, 40, 20);
-        PacketPlayOutTitle packet1 = new PacketPlayOutTitle(EnumTitleAction.SUBTITLE, ChatSerializer.a("{\"text\":\"�fTo zbkGames!\"}"), 20, 40, 20);
+        PacketPlayOutTitle packet = new PacketPlayOutTitle(EnumTitleAction.TITLE, ChatSerializer.a("{\"text\":\"" + message.TITLE + p.getName() + "\"}"), 20, 40, 20);
+        PacketPlayOutTitle packet1 = new PacketPlayOutTitle(EnumTitleAction.SUBTITLE, ChatSerializer.a("{\"text\":\"To zbkGames!\"}"), 20, 40, 20);
 
         ((CraftPlayer) event.getPlayer()).getHandle().playerConnection.sendPacket(packet);
         ((CraftPlayer) event.getPlayer()).getHandle().playerConnection.sendPacket(packet1);
