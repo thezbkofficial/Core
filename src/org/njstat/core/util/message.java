@@ -9,7 +9,7 @@ public interface message {
 	String GAMEMODE_SURVIVAL = ChatColor.translateAlternateColorCodes('&', "Gamemode set to &asurvival");
 	String CORE = ChatColor.translateAlternateColorCodes('&', "Core is running version ");
 	String VERSION = ChatColor.translateAlternateColorCodes('&', "Server version ");
-	String CORE_VERSION = ChatColor.translateAlternateColorCodes('&', "&av1.0-alpha &7[December 14 2016]");
+	String CORE_VERSION = ChatColor.translateAlternateColorCodes('&', "&av1.0-alpha5 &7[December 19 2016]");
 	String CORE_IS_STAFF = ChatColor.translateAlternateColorCodes('&', "You are staff");
 	String INVALID = ChatColor.translateAlternateColorCodes('&', "invalid command usage");
 	String GAMEMODE_INVALID = ChatColor.translateAlternateColorCodes('&', "Invlaid Gamemode." );
