@@ -1,6 +1,7 @@
 # Core - alpha
-Core is a plugin designed for use on a minigame lobby server.
+![Version](https://img.shields.io/badge/Version-v1.0--alpha5-red.svg?style=flat-square)
 
+Core is a plugin designed for use on a minigame lobby server.
 ###Current Modules:
 
 ----------
