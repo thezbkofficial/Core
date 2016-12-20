@@ -5,19 +5,21 @@ import org.bukkit.ChatColor;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.njstat.core.commands.Announcements;
 import org.njstat.core.commands.CoreCommand;
 import org.njstat.core.commands.Debug;
-import org.njstat.core.commands.Gamemode;
-import org.njstat.core.commands.SetRank;
-import org.njstat.core.commands.SetSpawn;
 import org.njstat.core.commands.Spawn;
 import org.njstat.core.commands.msg;
+import org.njstat.core.commands.staff.Announcements;
+import org.njstat.core.commands.staff.Gamemode;
+import org.njstat.core.commands.staff.SetRank;
+import org.njstat.core.commands.staff.SetSpawn;
 import org.njstat.core.listeners.Antidamage;
 import org.njstat.core.listeners.Antirain;
+import org.njstat.core.listeners.FileManager;
 import org.njstat.core.listeners.Playerjoin;
 import org.njstat.core.listeners.Voiddamage;
-import org.njstat.core.util.FileManager;
+import org.njstat.core.utill.ChatFormats;
+import org.njstat.core.utill.api.message;
 
 public class Core extends JavaPlugin{
     
@@ -25,7 +27,7 @@ public class Core extends JavaPlugin{
 
 	/** OPTIONS **/
 	
-	public final String version = "beta2-build7";
+	public final String version = message.CORE_VERSION;
 	
 	
 	/**         **/

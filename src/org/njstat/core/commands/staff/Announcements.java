@@ -1,4 +1,4 @@
-package org.njstat.core.commands;
+package org.njstat.core.commands.staff;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -7,12 +7,10 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.njstat.core.Core;
-import org.njstat.core.util.FileManager;
-import org.njstat.core.util.R;
-import org.njstat.core.util.message;
-import org.njstat.core.util.prefix;
-
-import com.connorlinfoot.titleapi.TitleAPI;
+import org.njstat.core.listeners.FileManager;
+import org.njstat.core.utill.api.R;
+import org.njstat.core.utill.api.message;
+import org.njstat.core.utill.api.prefix;
 
 public class Announcements implements CommandExecutor{
 	Core plugin;
@@ -28,18 +26,16 @@ public class Announcements implements CommandExecutor{
 		Player p = (Player) sender;
         if(R.isOwner(p)|| R.isDev(p) || R.isAdmin(p)){
         	if(args.length == 0){
-        		sender.sendMessage(prefix.core + message.INVALID);
+        		sender.sendMessage(prefix.CORE + message.INVALID);
         	}else{
             	Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "\n" +ChatColor.GOLD + "" + ChatColor.BOLD + "ANNOUNCEMENT" + ChatColor.WHITE + " - " + msg + ChatColor.GRAY + "\nSent by " + ChatColor.GREEN + sender.getName() + ChatColor.GREEN + "\n");
             	Bukkit.getServer().broadcastMessage("\n");
             	
-            	TitleAPI.sendTitle(p,20,100,20,"Title","Subtitle");
-
+            	return true;
         	}
-        	
-        	return true;
+
         } else {
-        	sender.sendMessage(prefix.core + message.NOPERMISSION);
+        	sender.sendMessage(prefix.CORE + message.NOPERMISSION);
         }
 		return true;
 	}

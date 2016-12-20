@@ -11,18 +11,22 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
-import org.bukkit.event.entity.EntityDamageEvent;
-import org.njstat.core.util.R;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.njstat.core.utill.api.R;
 
 public class Antidamage implements Listener{
 	@EventHandler(priority = EventPriority.HIGH)
-    public void onPlayerDamage(EntityDamageEvent event) {
+    public void onPlayerDamage(EntityDamageByEntityEvent event) {
+		Player player = (Player) event.getDamager();
+		
 		Entity a = event.getEntity();
 		 
         World w = a.getWorld();
  
         w.playEffect(a.getLocation(), Effect.STEP_SOUND, Material.REDSTONE_BLOCK);
-        event.setCancelled(true);
+        if(!R.isOwner(player) || R.isAdmin(player) || R.isDefault(player)){
+        	event.setCancelled(true);
+        }
     }
 	@EventHandler
 	public void onPlayerBreak(BlockBreakEvent event){

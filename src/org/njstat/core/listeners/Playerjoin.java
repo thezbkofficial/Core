@@ -13,8 +13,8 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.njstat.core.util.message;
-import org.njstat.core.util.prefix;
+import org.njstat.core.utill.api.message;
+import org.njstat.core.utill.api.prefix;
 
 import net.minecraft.server.v1_11_R1.IChatBaseComponent.ChatSerializer;
 import net.minecraft.server.v1_11_R1.PacketPlayOutTitle;
@@ -43,7 +43,7 @@ public class Playerjoin implements Listener{
         ItemMeta itemMeta = item.getItemMeta();
         itemMeta.setDisplayName(name);
  
-        itemMeta.setLore(Arrays.asList(prefix.game + "Selector"));
+        itemMeta.setLore(Arrays.asList(prefix.GAME + "Selector"));
  
         item.setItemMeta(itemMeta);
         p.getInventory().addItem(item);

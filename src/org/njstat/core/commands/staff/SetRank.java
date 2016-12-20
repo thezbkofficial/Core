@@ -1,4 +1,4 @@
-package org.njstat.core.commands;
+package org.njstat.core.commands.staff;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -8,9 +8,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 import org.njstat.core.Core;
-import org.njstat.core.util.FileManager;
-import org.njstat.core.util.message;
-import org.njstat.core.util.prefix;
+import org.njstat.core.listeners.FileManager;
+import org.njstat.core.utill.api.message;
+import org.njstat.core.utill.api.prefix;
 
 public class SetRank implements CommandExecutor {
 	
@@ -28,11 +28,11 @@ public class SetRank implements CommandExecutor {
 			if ((sender instanceof Player) || (sender instanceof ConsoleCommandSender)) {
 				if (args.length == 0) {
 					sender.sendMessage(
-							ChatColor.translateAlternateColorCodes('&', prefix.core + message.SETRANK_USAGE));
+							ChatColor.translateAlternateColorCodes('&', prefix.CORE + message.SETRANK_USAGE));
 				} else {
 					if (!(fileManager.getrankConfig().getBoolean("groups.owner.users." + p.getUniqueId().toString()))) {
 						sender.sendMessage(ChatColor.translateAlternateColorCodes('&',
-								prefix.ranks + message.NOPERMISSION));
+								prefix.RANKS + message.NOPERMISSION));
 
 					} else {
 

@@ -5,9 +5,9 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.njstat.core.Core;
-import org.njstat.core.util.R;
-import org.njstat.core.util.message;
-import org.njstat.core.util.prefix;
+import org.njstat.core.utill.api.R;
+import org.njstat.core.utill.api.message;
+import org.njstat.core.utill.api.prefix;
 
 public class CoreCommand implements CommandExecutor{
 	
@@ -20,9 +20,9 @@ public class CoreCommand implements CommandExecutor{
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
 		Player p = (Player) sender;
-		p.sendMessage(prefix.core + message.CORE + message.CORE_VERSION);
+		p.sendMessage(prefix.CORE + message.CORE + message.CORE_VERSION);
 		if(!R.isDefault(p)){
-			p.sendMessage(prefix.ranks + message.CORE_IS_STAFF);
+			p.sendMessage(prefix.RANKS + message.CORE_IS_STAFF);
 		}
 		return true;
 	}

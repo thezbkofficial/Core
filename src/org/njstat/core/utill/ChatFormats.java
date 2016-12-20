@@ -1,12 +1,12 @@
-package org.njstat.core;
+package org.njstat.core.utill;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
-import org.njstat.core.util.ChatFormat;
-import org.njstat.core.util.FileManager;
-import org.njstat.core.util.R;
+import org.njstat.core.listeners.FileManager;
+import org.njstat.core.utill.api.ChatFormat;
+import org.njstat.core.utill.api.R;
 
 public class ChatFormats implements Listener{
     FileManager fileManager = FileManager.getFileManager();

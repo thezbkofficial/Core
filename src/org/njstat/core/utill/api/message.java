@@ -1,4 +1,4 @@
-package org.njstat.core.util;
+package org.njstat.core.utill.api;
 
 import org.bukkit.ChatColor;
 

@@ -6,8 +6,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.njstat.core.Core;
-import org.njstat.core.util.message;
-import org.njstat.core.util.prefix;
+import org.njstat.core.utill.api.message;
+import org.njstat.core.utill.api.prefix;
 
 public class Debug implements CommandExecutor{
 	
@@ -20,11 +20,11 @@ public class Debug implements CommandExecutor{
 		long mem = Runtime.getRuntime().freeMemory();
 		long cpu = Runtime.getRuntime().availableProcessors();
 		long maxmem = Runtime.getRuntime().maxMemory();
-		p.sendMessage(prefix.core + ChatColor.GREEN + "Server Status");
-		p.sendMessage(prefix.core + message.MEMORY + bytesToMeg(mem) + ChatColor.GRAY + " MB");
-		p.sendMessage(prefix.core + message.MAXMEM + bytesToMeg(maxmem) + ChatColor.GRAY + " MB");
-		p.sendMessage(prefix.core + message.CPU + cpu);
-		p.sendMessage(prefix.core + message.CORE + message.CORE_VERSION);
+		p.sendMessage(prefix.CORE + ChatColor.GREEN + "Server Status");
+		p.sendMessage(prefix.CORE + message.MEMORY + bytesToMeg(mem) + ChatColor.GRAY + " MB");
+		p.sendMessage(prefix.CORE + message.MAXMEM + bytesToMeg(maxmem) + ChatColor.GRAY + " MB");
+		p.sendMessage(prefix.CORE + message.CPU + cpu);
+		p.sendMessage(prefix.CORE + message.CORE + message.CORE_VERSION);
 		
 
 		return true;

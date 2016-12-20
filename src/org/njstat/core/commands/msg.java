@@ -6,8 +6,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.njstat.core.Core;
-import org.njstat.core.util.FileManager;
-import org.njstat.core.util.prefix;
+import org.njstat.core.listeners.FileManager;
+import org.njstat.core.utill.api.prefix;
 public class msg implements CommandExecutor {
 	Core plugin;
 	public msg(Core passedPlugin){
@@ -45,7 +45,7 @@ public class msg implements CommandExecutor {
 
          
 
-            sender.sendMessage(prefix.core + "That player is not currently online!");
+            sender.sendMessage(prefix.CORE + "That player is not currently online!");
 
          
 
