@@ -26,24 +26,24 @@ public interface message {
 	
 	//SPAWN
 	String SPAWN_SET = ChatColor.translateAlternateColorCodes('&', "Spawnpoint set in ");
-    String SPAWN = ChatColor.translateAlternateColorCodes('&', "Sent to spawn");
-    String TITLE = ChatColor.translateAlternateColorCodes('&', "&eWelcome &f");
+        String SPAWN = ChatColor.translateAlternateColorCodes('&', "Sent to spawn");
+    	String TITLE = ChatColor.translateAlternateColorCodes('&', "&eWelcome &f");
     
-    //LOBBY ITEMS
-    String SERVER_SELECTOR_NAME = ChatColor.translateAlternateColorCodes('&', "&aServer Selector");
+    	//LOBBY ITEMS
+    	String SERVER_SELECTOR_NAME = ChatColor.translateAlternateColorCodes('&', "&aServer Selector");
     
-    //DEBUG MENU
-    String MEMORY = ChatColor.translateAlternateColorCodes('&', "Free memory: &a");
-    String MAXMEM = ChatColor.translateAlternateColorCodes('&', "Maximum memory: &a");
-    String CPU = ChatColor.translateAlternateColorCodes('&', "Free processors: &a");
-    
-    //DIFFICULTY
-    String DIFFICULTY0 = ChatColor.translateAlternateColorCodes('&', "Difficulty set to &apeaceful");
-    String DIFFICULTY1 = ChatColor.translateAlternateColorCodes('&', "Difficulty set to &aeasy");
-    String DIFFICULTY2 = ChatColor.translateAlternateColorCodes('&', "Difficulty set to &anormal");
-    String DIFFICULTY3 = ChatColor.translateAlternateColorCodes('&', "Difficulty set to &ahard");
-    
-    //this thing does something
+    	//DEBUG MENU
+    	String MEMORY = ChatColor.translateAlternateColorCodes('&', "Free memory: &a");
+    	String MAXMEM = ChatColor.translateAlternateColorCodes('&', "Maximum memory: &a");
+    	String CPU = ChatColor.translateAlternateColorCodes('&', "Free processors: &a");
+    	
+    	//DIFFICULTY
+    	String DIFFICULTY0 = ChatColor.translateAlternateColorCodes('&', "Difficulty set to &apeaceful");
+    	String DIFFICULTY1 = ChatColor.translateAlternateColorCodes('&', "Difficulty set to &aeasy");
+    	String DIFFICULTY2 = ChatColor.translateAlternateColorCodes('&', "Difficulty set to &anormal");
+    	String DIFFICULTY3 = ChatColor.translateAlternateColorCodes('&', "Difficulty set to &ahard");
+    	
+    	//this thing does something
 	public void setValue();
 
 }
