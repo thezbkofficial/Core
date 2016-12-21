@@ -17,15 +17,22 @@ import org.njstat.core.utill.api.R;
 public class Antidamage implements Listener{
 	@EventHandler(priority = EventPriority.HIGH)
     public void onPlayerDamage(EntityDamageByEntityEvent event) {
-		Player player = (Player) event.getDamager();
+		Entity damager = (Entity) event.getDamager();
 		
 		Entity a = event.getEntity();
 		 
         World w = a.getWorld();
  
         w.playEffect(a.getLocation(), Effect.STEP_SOUND, Material.REDSTONE_BLOCK);
-        if(!R.isOwner(player) || R.isAdmin(player) || R.isDefault(player)){
-        	event.setCancelled(true);
+        
+        if(damager instanceof Player){
+        	Player player = (Player) event.getDamager();
+        	
+        	if(player.isOp() || R.isAdmin(player) || R.isDev(player) || R.isOwner(player)){
+        		event.setCancelled(false);
+        	} else{
+        		event.setCancelled(true);
+        	}
         }
     }
 	@EventHandler

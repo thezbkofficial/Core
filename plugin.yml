@@ -23,3 +23,6 @@ commands:
    lag:
       description: display memory.
       aliases: [lagg, memory]
+   difficulty:
+      description: Change difficulty.
+      aliases: [diff]
