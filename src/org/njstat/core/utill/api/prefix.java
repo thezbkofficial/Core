@@ -9,5 +9,7 @@ public interface prefix {
 	String RANKS = ChatColor.translateAlternateColorCodes('&', "&9&lRANKS &7");
 	String SPAWN = ChatColor.translateAlternateColorCodes('&', "&6&lSPAWN &7");
 	String GAME = ChatColor.translateAlternateColorCodes('&', "&3&lGAME &7");
+	//staff prefix in preperation for punishment features.
+	String STAFF = ChatColor.translateAlternameColorCodes('&', "&6&lSTAFF &7")
 
 }
