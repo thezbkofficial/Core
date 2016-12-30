@@ -42,6 +42,7 @@ public class Core extends JavaPlugin{
 		registerEvents(this, new Antirain(), new Antidamage(), new Playerjoin(), new ChatFormats(), new Voiddamage());
 		
 		//register commands
+
 		
 		this.getCommand("core").setExecutor(new CoreCommand(this));
 		this.getCommand("difficulty").setExecutor(new DifficultyCmd(this));
@@ -58,6 +59,7 @@ public class Core extends JavaPlugin{
 		
 		this.getServer().getConsoleSender()
 		.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7[&aCore&7] &bFinished loading"));
+
 		
 		
 		
@@ -74,7 +76,9 @@ public class Core extends JavaPlugin{
  
         }
 		this.getServer().getConsoleSender()
+
 		.sendMessage(ChatColor.translateAlternateColorCodes('&', "&7[&aCore&7] &bbyebye"));
+
 
 	}
 	
@@ -87,4 +91,14 @@ public class Core extends JavaPlugin{
 	public static Plugin getPlugin() {
 		return plugin;
 	}
+
+	//Id like to thank my mom for plenty of memes
+	// speech over
+	
+
+	//first rule of 2017:
+	// dont talk about 2016.
+	
+	
+
 }
