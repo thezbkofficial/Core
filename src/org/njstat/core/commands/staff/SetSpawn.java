@@ -1,4 +1,4 @@
-package org.njstat.core.commands;
+package org.njstat.core.commands.staff;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -10,22 +10,31 @@ import org.njstat.core.Core;
 import org.njstat.core.utill.api.message;
 import org.njstat.core.utill.api.prefix;
 
-public class Spawn implements CommandExecutor {
+public class SetSpawn implements CommandExecutor {
+
 	Core plugin;
 
-	public Spawn(Core passedPlugin) {
+	public SetSpawn(Core passedPlugin) {
 		this.plugin = passedPlugin;
 	}
 
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (!(sender instanceof ConsoleCommandSender)) {
-
 			Player p = (Player) sender;
-			p.teleport(p.getWorld().getSpawnLocation());
-			p.sendMessage(prefix.SPAWN + message.SPAWN);
+			if (p.isOp()) {
+				p.getWorld().setSpawnLocation(p.getLocation().getBlockX(), p.getLocation().getBlockY(),
+						p.getLocation().getBlockZ());
+				p.sendMessage(
+						ChatColor.YELLOW + prefix.SPAWN + message.SPAWN_SET + ChatColor.GREEN + p.getWorld().getName());
+			}
+			if (!p.isOp()) {
+				p.sendMessage(ChatColor.RED + prefix.RANKS + message.NOPERMISSION);
+			}
 		} else {
 			sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cOnly players can do this"));
 		}
 		return true;
+
 	}
+
 }
